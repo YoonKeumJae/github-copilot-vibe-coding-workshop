@@ -70,17 +70,19 @@ Refer to the [README](../README.md) doc for preparation.
     ```text
     I'd like to build a container image of a Java app. Follow the instructions below.
 
-    - The Java app is located at `complete/java`.
-    - Your working directory is the repository root.
     - Identify all the steps first, which you're going to do.
+    - The Java app is located at `java/socialapp`.
+    - Your working directory is the repository root.
     - Create a Dockerfile, `Dockerfile.java`.
     - Use Microsoft OpenJDK 21.
     - Use multi-stage build approach.
     - Extract JRE from JDK.
     - Use the target port number of `8080` for the container image.
+    - Add both environment variables, `CODESPACE_NAME` and `GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN` from the host to the container image.
+    - Create an SQLite database file, `sns_api.db`, in the container image. DO NOT Copy the file from the host.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 1. Once `Dockerfile.java` is created, build the container image with the following prompt.
 
@@ -93,14 +95,15 @@ Refer to the [README](../README.md) doc for preparation.
     - If the build fails, analyze the issues and fix them.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 1. Once the build succeeds, run the container image with the following prompt.
 
     ```text
     Use the container image just built, run a container and verify if the app is running properly.
     
-    - Use the host port of `5050`.
+    - Use the host port of `8080`.
+    - Both `CODESPACE_NAME` and `GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN` values should be the ones from GitHub Codespaces.
     ```
 
 ### Containerize .NET Application
@@ -111,16 +114,17 @@ Refer to the [README](../README.md) doc for preparation.
     ```text
     I'd like to build a container image of a .NET app. Follow the instructions below.
 
-    - The .NET app is located at `complete/dotnet`.
-    - Your working directory is the repository root.
     - Identify all the steps first, which you're going to do.
+    - The .NET app is located at `dotnet`.
+    - Your working directory is the repository root.
     - Create a Dockerfile, `Dockerfile.dotnet`.
     - Use .NET 9.
     - Use multi-stage build approach.
     - Use the target port number of `8080` for the container image.
+    - Add the environment variable, `ApiSettings__BaseUrl` to the container. It should point to the Java app, `http://localhost:8080/api`.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 1. Once `Dockerfile.dotnet` is created, build the container image with the following prompt.
 
@@ -133,7 +137,7 @@ Refer to the [README](../README.md) doc for preparation.
     - If the build fails, analyze the issues and fix them.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 1. Once the build succeeds, run the container image with the following prompt.
 
@@ -141,12 +145,13 @@ Refer to the [README](../README.md) doc for preparation.
     Use the container image just built, run a container and verify if the app is running properly.
     
     - Use the host port of `3030`.
+    - Pass the environment variable `ApiSettings__BaseUrl` the value of `http://localhost:8080/api`.
     ```
 
 1. Make sure that both frontend and backend apps are NOT communicating with each other because they don't know each other yet. Run the prompt like below.
 
     ```text
-    Regardless or not, remove both containers currently running.
+    Remove both Java and .NET containers and their respective container images.
     ```
 
 ### Orchestrate Containers
@@ -157,19 +162,24 @@ Refer to the [README](../README.md) doc for preparation.
     ```text
     I'd like to create a Docker Compose file. Follow the instructions below.
     
+    - Identify all the steps first, which you're going to do.
     - Your working directory is the repository root.
     - Use `Dockerfile.java` as a backend app.
     - Use `Dockerfile.dotnet` as a frontend app.
     - Create `compose.yaml` as the Docker Compose file.
     - Use `contoso` as the network name.
-    - Use `contoso-backend` as the container name of the Java app. Its target port is 8080, and host port is 5050.
+    - Use `contoso-backend` as the container name of the Java app. Its target port is 8080, and host port is 8080.
     - Use `contoso-frontend` as the container name of the .NET app. Its target port is 8080, and host port is 3030.
+    - Add both environment variables, `CODESPACE_NAME` and `GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN` from the host to the Java container.
+    - Add the environment variable, `ApiSettings__BaseUrl` to the .NET container. It should point to the Java app's `/api`.
     ```
+
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 1. Once the `compose.yaml` file is created, run it and verify if both apps are running properly.
 
     ```text
-    Now, run the Docker compose file and verify if the apps are running properly.
+    Run the Docker compose file and verify if all the apps are running properly.
     ```
 
 1. Open a web browser and navigate to `http://localhost:3030`, and verify if the apps are up and running properly.

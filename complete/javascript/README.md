@@ -8,7 +8,9 @@ Refer to the [README](../../README.md) doc for preparation.
 
 ### Run FastAPI Backend
 
-Use [Python App Sample](../complete/python/).
+Use [Python App Sample](../python/).
+
+> **NOTE**: If you use GitHub Codespaces, make sure that the Python app port, `8000`, is set to **public**.
 
 ### Run React Frontend
 
@@ -27,7 +29,7 @@ Use [Python App Sample](../complete/python/).
 1. Install npm packages.
 
     ```bash
-    cd $REPOSITORY_ROOT
+    cd $REPOSITORY_ROOT/complete/javascript
     npm install
     ```
 

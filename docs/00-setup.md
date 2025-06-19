@@ -16,15 +16,14 @@ Refer to the [README](../README.md) doc for preparation.
   - [Install Docker Desktop](#install-docker-desktop)
   - [Install Visual Studio Code](#install-visual-studio-code)
   - [Start Visual Studio Code](#start-visual-studio-code)
+  - [Set-up MCP Servers](#set-up-mcp-servers)
 - [Check GitHub Copilot Agent Mode](#check-github-copilot-agent-mode)
 - [Prepare Custom Instructions](#prepare-custom-instructions)
 - [Analyze Product Requirements Document (PRD) and Design API](#analyze-product-requirements-document-prd-and-design-api)
 
 ## Use GitHub Codespaces
 
-1. Take a look at the image below, and follow the steps in the order of clicking `[<> Code]` 👉 `[Codespaces]` 👉 `[Create codespace on main]` and create a new GitHub Codespace instance. It might take 5-10 mins depending on the network status.
-
-   ![Starting with GitHub Codespaces](./images/setup-01.png)
+1. Click this link 👉 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/github-copilot-vibe-coding-workshop)
 
 1. Once the GitHub Codespace instance is ready, open a terminal and run the following command to check out everything you need has been properly installed or not.
 

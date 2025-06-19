@@ -17,7 +17,9 @@ Refer to the [README](../README.md) doc for preparation.
 - [Check GitHub Copilot Agent Mode](#check-github-copilot-agent-mode)
 - [Prepare Custom Instructions](#prepare-custom-instructions)
 - [Prepare Blazor Web App Project](#prepare-blazor-web-app-project)
+- [Run Spring Boot Backend App](#run-spring-boot-backend-app)
 - [Migrate React Web App](#migrate-react-web-app)
+- [Verify Blazor Frontend App](#verify-blazor-frontend-app)
 
 ### Check GitHub Copilot Agent Mode
 
@@ -64,6 +66,7 @@ Refer to the [README](../README.md) doc for preparation.
 ### Prepare Blazor Web App Project
 
 1. Make sure that you're using GitHub Copilot Agent Mode with the model of `Claude Sonnet 4` or `GPT-4.1`.
+1. Make sure that the `context7` MCP server is up and running.
 1. Use prompt like below to scaffold a Blazor web app project.
 
     ```text
@@ -82,11 +85,24 @@ Refer to the [README](../README.md) doc for preparation.
     - If either building or running the app fails, analyze the issues and fix them.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
+
+### Run Spring Boot Backend App
+
+1. Make sure that the Spring Boot backend app is up and running.
+
+    ```text
+    Run the Spring Boot backend API, which is located at the `java` directory.
+    ```
+
+   > **NOTE**: You may use the [`complete/java`](../complete/java/) sample app instead.
+
+1. If you use GitHub Codespaces, make sure that the port number `8080` is set to `public` instead of `private`. Otherwise, you'll get the `401` error when accessing from the frontend app.
 
 ### Migrate React Web App
 
 1. Make sure that you're using GitHub Copilot Agent Mode with the model of `Claude Sonnet 4` or `GPT-4.1`.
+1. Make sure that the `context7` MCP server is up and running.
 1. Use prompt like below to migrate React to Blazor.
 
     ```text
@@ -119,7 +135,7 @@ Refer to the [README](../README.md) doc for preparation.
    > - Until the build succeeds, iterate this step.
    > - If the build keeps failing, check out the error messages and ask them to GitHub Copilot Agent to figure them out.
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 1. Once the build succeeds, use prompt like below to verify the migration result.
 
     ```text
@@ -139,7 +155,7 @@ Refer to the [README](../README.md) doc for preparation.
     Run the Spring Boot backend API, which is located at the `java` directory.
     ```
 
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 1. Verify if it's built properly or not.
 
     ```text
@@ -150,7 +166,7 @@ Refer to the [README](../README.md) doc for preparation.
 
 1. Open a web browser and navigate to `http://localhost:3031`.
 1. Verify if both frontend and backend apps are running properly.
-1. Click the `[keep]` button of GitHub Copilot to take the changes.
+1. Click the ![the keep button image](https://img.shields.io/badge/keep-blue) button of GitHub Copilot to take the changes.
 
 ---
 

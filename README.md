@@ -16,9 +16,19 @@ But here's the situation...
 - Add custom instruction to GitHub Copilot so that you have more control over GitHub Copilot.
 - Add various MCP servers to GitHub Copilot so that you build the applications more precisely.
 
+## Workshop in Your Language
+
+This workshop material is currently provided in the following languages:
+
+[English](./README.md) | [Español](./localisation/es-es/) | [Français](./localisation/fr-fr/) | [日本語](./localisation/ja-jp/) | [한국어](./localisation/ko-kr/) | [Português](./localisation/pt-br/) | [中文(简体)](./localisation/zh-cn/)
+
 ## Prerequisites
 
-During this workshop, [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) is highly recommended because there's no need for preparation, except a web browser. However, if you really need to use your machine, make sure you've installed everything identified below.
+During this workshop, [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) is highly recommended because there's no need for preparation, except a web browser.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/github-copilot-vibe-coding-workshop)
+
+However, if you really need to use your machine, make sure you've installed everything identified below.
 
 ### Common
 
